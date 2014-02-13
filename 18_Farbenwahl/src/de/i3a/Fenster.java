@@ -11,6 +11,9 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
@@ -27,6 +30,9 @@ public class Fenster extends JFrame {
 	private JRadioButton jrbtnrot, jrbtnblau, jrbtngelb;
 	private JComboBox<String> jcombobox;
 	private ButtonGroup bg;
+	private JMenuItem beenden,rot,gelb,blau;
+	private JMenu datei,bearbeiten;
+	private JMenuBar jmbar;
 	
 	public Fenster() {
 		this.setTitle("Farbwahl");
@@ -42,6 +48,23 @@ public class Fenster extends JFrame {
 
 	private void initComponents() {
 		c=this.getContentPane();
+		
+		beenden = new JMenuItem("Beenden");
+		rot = new JMenuItem("Rot");
+		gelb = new JMenuItem("Gelb");
+		blau = new JMenuItem("Blau");
+		datei = new JMenu("Datei");
+		bearbeiten = new JMenu("Bearbeiten");
+		jmbar = new JMenuBar();
+		
+		datei.add(beenden);
+		bearbeiten.add(rot);
+		bearbeiten.add(gelb);
+		bearbeiten.add(blau);
+		jmbar.add(datei);
+		jmbar.add(bearbeiten);
+		this.setJMenuBar(jmbar);
+		
 		
 		jpnorth = new JPanel();
 		jpwest = new JPanel();
@@ -97,6 +120,12 @@ public class Fenster extends JFrame {
 		jrbtngelb.addActionListener(mal);
 		jrbtnrot.addActionListener(mal);
 		jcombobox.addActionListener(mal);
+		
+		beenden.addActionListener(mal);
+		rot.addActionListener(mal);
+		gelb.addActionListener(mal);
+		blau.addActionListener(mal);
+		
 	}
 	
 	private class MeinActionListener implements ActionListener {
