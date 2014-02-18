@@ -65,7 +65,6 @@ public class Fenster extends JFrame {
 		jmbar.add(bearbeiten);
 		this.setJMenuBar(jmbar);
 		
-		
 		jpnorth = new JPanel();
 		jpwest = new JPanel();
 		jpcenter = new JPanel();
@@ -121,7 +120,7 @@ public class Fenster extends JFrame {
 		jrbtnrot.addActionListener(mal);
 		jcombobox.addActionListener(mal);
 		
-		beenden.addActionListener(mal);
+//		beenden.add
 		rot.addActionListener(mal);
 		gelb.addActionListener(mal);
 		blau.addActionListener(mal);
